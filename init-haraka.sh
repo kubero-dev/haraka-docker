@@ -83,10 +83,16 @@ echo "
 disabled=false
 enable_tls=false
 maxTempFailures=3
-load_pid_queue
-flush_queue
-received_header=Haraka lala
+;load_pid_queue
+;flush_queue
+;received_header=Haraka lala
 " >> /haraka/config/outbound.ini
+
+## relay.ini
+echo "
+[relay]
+all=true 
+" >> /haraka/config/relay.ini
 
 ## start haraka
 /usr/local/bin/haraka -c /haraka
