@@ -1,4 +1,7 @@
-# Haraka MTA 
+# Haraka MTA (WIP)
+
+> **Warning**
+> This image is under development and not ready for production use.
 
 Haraka is a fast, lightweight, and easy to configure SMTP server. It is written in Node.js and is designed to be easy to configure and extend. 
 
