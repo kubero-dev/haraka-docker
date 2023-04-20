@@ -3,7 +3,6 @@
 
 ## host_list
 # Split Hostname from HARAKA_HOSTLIST env variable and create host_list
-# HARAKA_HOSTLIST="example.org,test.com"
 > /haraka/config/host_list
 for i in $(echo ${HARAKA_HOSTLIST:=localhost} | sed "s/,/\n/g") ; do
     echo $i >> /haraka/config/host_list
@@ -77,7 +76,7 @@ host=localhost
 port=2555
 enable_tls=false
 enable_outbound=true" >> /haraka/config/smtp_forward.ini
-
+```
 
 ## outbound.ini
 echo "
@@ -88,7 +87,6 @@ load_pid_queue
 flush_queue
 received_header=Haraka lala
 " >> /haraka/config/outbound.ini
-```
 
 ## start haraka
 /usr/local/bin/haraka -c /haraka
