@@ -11,7 +11,7 @@ The Goal of this project is to provide a simple way to deploy Haraka with Docker
 
 ### Pull Image 
 ```bash
-docker pull ghcr.io/kubero-dev/haraka:latest
+docker run --env-file .env -p 8025:8025 --name haraka ghcr.io/kubero-dev/haraka:latest
 ```
 
 ### Docker Compose
