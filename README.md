@@ -9,6 +9,11 @@ The Goal of this project is to provide a simple way to deploy Haraka with Docker
 
 ## Usage
 
+### Pull Image 
+```bash
+docker pull ghcr.io/kubero-dev/haraka:latest
+```
+
 ### Docker Compose
 
 The easiest way to get started is to use the provided docker-compose.yml file.
