@@ -1,0 +1,29 @@
+version: "3"
+
+services:
+  haraka:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    image: haraka/haraka
+    container_name: haraka
+    #restart: always
+    #command: tail -f /dev/null
+    ports:
+      - "8025:8025"
+    environment:
+      #- HARAKA_HOSTLIST=mail.example.com,mail2.example.com
+      - HARAKA_HOSTLIST=mail.kubero.dev,kubero.dev,gmail.com,tonne.to,kubernetes.docker.internal
+      - HARAKA_SMPT_PORT=8025
+      - HARAKA_ME=mynameisnobody
+      #- HARAKA_PLUGINS=dnsbl,helo.checks,mail_from.is_resolvable,rcpt_to.in_host_list,headers,queue/smtp_forward
+      - HARAKA_PLUGINS=helo.checks,rcpt_to.in_host_list,headers,relay_all
+      - HARAKA_HELO_CHECKS_CHECK=match_re=false,bare_ip=false,dynamic=false,big_company=true,forward_dns=false,rdns_match=false,host_mismatch=false,proto_mismatch=false
+      - HARAKA_HELO_CHECKS_REJECT=host_mismatch=false,big_company=false,rdns_match=false
+      - HARAKA_HELO_CHECKS_SKIP=private_ip=false,relaying=true
+      - HARAKA_LOG_LEVEL=debug
+      - HARAKA_LOG_TIMESTAMP=true
+      - HARAKA_LOG_FORMAT=default
+    volumes:
+      - ./config/tls_cert.pem:/haraka/config/tls_cert.pem
+      - ./config/tls_key.pem:/haraka/config/tls_key.pem
