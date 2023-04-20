@@ -5,6 +5,8 @@
 
 Haraka is a fast, lightweight, and easy to configure SMTP server. It is written in Node.js and is designed to be easy to configure and extend. 
 
+The Haraka Node.js Mail Server can be found here: https://github.com/haraka/Haraka 
+
 The Goal of this project is to provide a simple way to deploy Haraka with Docker.
 
 ## Usage
