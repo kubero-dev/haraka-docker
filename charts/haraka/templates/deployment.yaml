@@ -33,6 +33,14 @@ spec:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
+          env:
+            # TODO: needs some investigation. Crashes with UNABLE_TO_VERIFY_LEAF_SIGNATURE
+            - name: HARAKA_SMPT_PORT
+              value: {{ .Values.service.port | quote }}
+            {{- range .Values.haraka.env }}
+            - name: {{ .name }}
+              value: {{ .value | quote }}
+            {{- end }}
           ports:
             - name: smtp
               containerPort: 8025

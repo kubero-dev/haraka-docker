@@ -21,3 +21,9 @@ Make sure you have created tht tls secrets as described in the config/README.md 
 ```bash
 docker-compose up -d
 ```
+
+### Helm Chart
+```bash
+helm install haraka charts/haraka
+helm update haraka charts/haraka
+```
