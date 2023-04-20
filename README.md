@@ -1,4 +1,15 @@
-Create tls secret for ingress
-```
-openssl req -x509 -sha256 -nodes -days 365 -newkey rsa:2048 -keyout tls_cert.pem -out tls_key.pem -subj "/C=US"
+# Haraka MTA 
+
+Haraka is a fast, lightweight, and easy to configure SMTP server. It is written in Node.js and is designed to be easy to configure and extend. 
+
+The Goal of this project is to provide a simple way to deploy Haraka with Docker.
+
+## Usage
+
+### Docker Compose
+
+The easiest way to get started is to use the provided docker-compose.yml file.
+Make sure you have created tht tls secrets as described in the config/README.md file.
+```bash
+docker-compose up -d
 ```
