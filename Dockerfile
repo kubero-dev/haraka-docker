@@ -13,7 +13,7 @@ RUN apk add --no-cache \
 RUN npm install -g Haraka && haraka -i /haraka
 
 # Copy configuration files
-COPY --chmod=755 init-haraka.sh /usr/local/bin/init-haraka.sh
+COPY --chmod=755 init /usr/local/bin
 
 # Copy configuration files
 #COPY --chmod=755 config /haraka/config

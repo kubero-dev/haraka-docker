@@ -1,4 +1,4 @@
-# Haraka MTA (WIP)
+# Docker image for Haraka Mail Server (WIP)
 
 > **Warning**
 > This image is under development and not ready for production use.
