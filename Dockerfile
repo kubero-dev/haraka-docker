@@ -6,6 +6,7 @@ RUN apk add --no-cache \
     ca-certificates \
     openssl \
     python3 \
+    py3-pip \
     make \
     g++
 
@@ -18,4 +19,11 @@ COPY --chmod=755 init /usr/local/bin
 # Copy configuration files
 #COPY --chmod=755 config /haraka/config
 
-CMD [ "init-haraka.sh" ]
+# install reqired python modules
+RUN pip3 install jinja2 argparse
+
+COPY --chmod=444 templates /haraka/templates
+COPY --chmod=755 haraka-configure.py /usr/local/bin/haraka-configure
+COPY --chmod=755 start-haraka.sh /usr/local/bin
+
+CMD [ "start-haraka.sh" ]
