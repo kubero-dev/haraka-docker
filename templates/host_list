@@ -1,0 +1,5 @@
+{#- | host_list | HARAKA_HOSTLIST | localhost | x | #}
+{%- set hostList = env['HARAKA_HOSTLIST'].split(',') %}
+{%- for hostname in hostList %}
+{{- hostname }}
+{% endfor %} 

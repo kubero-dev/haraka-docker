@@ -1,0 +1,7 @@
+{#- | host_list | HARAKA_PLUGINS | helo.checks,mail_from.is_resolvable,rcpt_to.in_host_list,headers,relay_all | x | #}
+{%- if env['HARAKA_PLUGINS'] is defined %}
+{%- set pluginList = env['HARAKA_PLUGINS'].split(',') %}
+{%- for plugin in pluginList %}
+{{- plugin }}
+{% endfor %} 
+{% endif %}
