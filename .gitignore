@@ -1,1 +1,5 @@
 *.pem
+notes.txt
+.venv
+output/*
+!output/.gitkeep
