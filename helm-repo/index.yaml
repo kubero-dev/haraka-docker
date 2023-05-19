@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  haraka:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2023-05-19T10:50:20.739318+02:00"
+    description: A Helm chart for Haraka on Kubernetes
+    digest: f2930a254deea35bd7166e1291c583a1044c8f4bb45d075907f1d798b80b28f7
+    name: haraka
+    type: application
+    urls:
+    - https://haraka-helm.kubero.dev/haraka-0.1.0.tgz
+    version: 0.1.0
+generated: "2023-05-19T10:50:20.734925+02:00"
