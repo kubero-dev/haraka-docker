@@ -24,10 +24,21 @@ Make sure you have created tht tls secrets as described in the config/README.md 
 docker-compose up -d
 ```
 
-### Helm Chart
+### Usage
+From helm repository
 ```bash
+helm repo add haraka https://haraka.kubero.dev 
+helm install haraka haraka/haraka
+helm upgrade haraka haraka/haraka
+```
+
+
+From source
+```bash
+git clone 
+cd haraka-docker
 helm install haraka charts/haraka
-helm update haraka charts/haraka
+helm upgrade haraka charts/haraka
 ```
 
 ## Configuration
